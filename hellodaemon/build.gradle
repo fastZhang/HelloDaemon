@@ -25,12 +25,13 @@ apply plugin: 'com.android.library'
 //}
 
 android {
-    compileSdkVersion 26
-    buildToolsVersion "27.0.2"
+    compileSdkVersion rootProject.ext.compileSdkVersion
 
     defaultConfig {
-        minSdkVersion 14
-        targetSdkVersion 27
+        minSdkVersion libMinSdkVersion
+
+
+        targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 11
         versionName "1.2.2"
     }
