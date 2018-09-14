@@ -25,13 +25,13 @@ apply plugin: 'com.android.library'
 //}
 
 android {
-    compileSdkVersion rootProject.ext.compileSdkVersion
+    compileSdkVersion compileSdkVersionInt
 
     defaultConfig {
         minSdkVersion libMinSdkVersion
 
 
-        targetSdkVersion rootProject.ext.targetSdkVersion
+        targetSdkVersion targetSdkVersionInt
         versionCode 11
         versionName "1.2.2"
     }
