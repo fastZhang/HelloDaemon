@@ -24,16 +24,16 @@ public abstract class AbsWorkService extends Service {
      * 是否 任务完成, 不再需要服务运行?
      * @return 应当停止服务, true; 应当启动服务, false; 无法判断, 什么也不做, null.
      */
-    public abstract Boolean shouldStopService(Intent intent, int flags, int startId);
-    public abstract void startWork(Intent intent, int flags, int startId);
-    public abstract void stopWork(Intent intent, int flags, int startId);
+    protected abstract Boolean shouldStopService(Intent intent, int flags, int startId);
+    protected abstract void startWork(Intent intent, int flags, int startId);
+    protected abstract void stopWork(Intent intent, int flags, int startId);
     /**
      * 任务是否正在运行?
      * @return 任务正在运行, true; 任务当前不在运行, false; 无法判断, 什么也不做, null.
      */
     public abstract Boolean isWorkRunning(Intent intent, int flags, int startId);
     @Nullable public abstract IBinder onBind(Intent intent, Void alwaysNull);
-    public abstract void onServiceKilled(Intent rootIntent);
+    protected abstract void onServiceKilled(Intent rootIntent);
 
     /**
      * 1.防止重复启动，可以任意调用 DaemonEnv.startServiceMayBind(Class serviceClass);
